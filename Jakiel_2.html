@@ -1,0 +1,35 @@
+## Task 1. Create DataFrames
+import pandas as pd
+grades_dict = {'Wally': [87,96,70], 'Eva': [100,87,90], 'Sam': [94,77,90], 'Katie': [100,81,82],'Bob': [83,65,85]}
+grades = pd.DataFrame(grades_dict)
+grades
+## Task 2. Custom Index
+grades.index = ['Test1', ' Test2', 'Test3']
+grades
+grades['Eva']
+grades.Katie
+## Task 3. Accessing Rows (loc,iloc)
+grades.loc['Test1']
+grades.iloc[1]
+grades.iloc[2]
+grades.loc['Test1':'Test3']
+grades.iloc[0:2]
+grades.loc[['Test1','Test3']]
+grades.iloc[[0,2]]
+## Task 3 Accessing Subsets (at,iat)
+grades.at['Test1', 'Eva']
+grades.iat[2,0]
+## Task 4. Descrobe (By Column)
+grades.describe()
+pd.set_option('display.precision', 2)
+## Task 5. Transpose(rows <--> colums)
+grades.mean()
+grades.T
+grades.T.describe
+grades.T.mean()
+## Task 6. Sort
+grades.sort_index(ascending=False)
+grades.sort_index
+grades.sort_index(axis=1)
+grades.sort_values(by='Test1', axis=1, ascending=False)
+grades.loc['Test1'].sort_values(ascending=False)
